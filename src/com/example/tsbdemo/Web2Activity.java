@@ -113,6 +113,7 @@ public class Web2Activity extends Activity {
 						result.cancel();
 					}
 				}).create().show();
+				
 				return true;
 			}
 			
