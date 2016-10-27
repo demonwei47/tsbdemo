@@ -86,7 +86,7 @@ public class Web2Activity extends Activity {
 					final JsResult result) {
 				new AlertDialog.Builder(Web2Activity.this).setTitle("Alert")
 					.setMessage(message).setPositiveButton("确定", new DialogInterface.OnClickListener() {
-						
+				
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 							result.confirm();
