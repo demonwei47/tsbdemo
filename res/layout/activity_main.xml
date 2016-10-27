@@ -49,11 +49,17 @@
         android:layout_height="wrap_content"
         android:onClick="btn"
         android:text="6" />
+
     <Button
         android:id="@+id/btn7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="btn"
         android:text="7" />
-
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btn"
+        android:text="js" />
 </LinearLayout>

@@ -14,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class WebActivity extends Activity {
 
@@ -75,6 +76,55 @@ public class WebActivity extends Activity {
 			}
 
 		});
+		
+		
+		tbsWebView.getView().setOnLongClickListener(new View.OnLongClickListener() {
+			
+			@Override
+			public boolean onLongClick(View v) {
+				
+				WebView.HitTestResult hitTestResult=tbsWebView.getHitTestResult();
+				String path=hitTestResult.getExtra();
+				
+				switch (hitTestResult.getType()) {
+				case WebView.HitTestResult.IMAGE_TYPE:
+					Toast.makeText(WebActivity.this, "当前选定的图片的URL是"+ path, Toast.LENGTH_LONG).show();
+					break;
+
+				case WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE:
+					Toast.makeText(WebActivity.this, "当前选定带有超链接的图片的URL是"+ path, Toast.LENGTH_LONG).show();
+					break;
+
+				case WebView.HitTestResult.SRC_ANCHOR_TYPE:	
+					Toast.makeText(WebActivity.this, "当前选定带有超链接URL是"+ path, Toast.LENGTH_LONG).show();
+					break;
+					
+				
+					
+					
+				default:
+					break;
+				}
+
+				
+				return false;
+			}
+		});
+		
+		tbsWebView.addJavascriptInterface(new WebViewJavaScriptFunction() {
+			
+			@Override
+			public void onJsFunctionCalled(String tag) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void name() {
+				
+			}
+			
+			
+		}, "android");
 	}
 
 	@Override

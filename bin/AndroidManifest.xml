@@ -33,6 +33,10 @@
             android:name=".WebActivity"
             android:label="web" >
         </activity>
+        <activity
+            android:name=".Web2Activity"
+            android:label="jsweb" >
+        </activity>
     </application>
 
 </manifest>

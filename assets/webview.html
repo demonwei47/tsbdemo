@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="text_msg" value="js text">
+<button type="button" onclick="submit()">提交</button>
+<p></p>
+
+<input type="number" disabled id="text_num" style="width: 30px" value="1">
+<button type="button" onclick="add()">+</button>
+<button type="button" onclick="reduce()">-</button>
+<p></p>
+===================================
+
+<input type="text" id="text_close" value="text_">
+<p></p>
+<button type="button" onclick="activityclose()">close</button>
+</body>
+
+<script type="text/javascript">
+
+
+    function submit() {
+        var text=document.getElementById("text_msg").value;
+        android.setText(text);
+    }
+
+    function add() {
+        var num=document.getElementById("text_num").value;
+        num++;
+        document.getElementById("text_num").value=num;
+        android.setNum(num);
+    }
+
+    function reduce() {
+        var num=document.getElementById("text_num").value;
+        num--;
+        document.getElementById("text_num").value=num;
+        android.setNum(num);
+    }
+    
+    function activityclose() {
+        android.finish();
+    }
+
+
+
+//-----------------------------------------------------------------------------------------------------
+
+    function sendText() {
+        var text=android.getText();
+        document.getElementById("text_msg").value=text;
+    }
+
+    function sendNum() {
+        document.getElementById("text_close").value="sendNum";
+        var num=android.getNum()+"";
+        document.getElementById("text_num").value=num;
+    }
+    
+    function sendClose() {
+        alert("This is a alert sample from html");
+        document.getElementById("text_close").value="close";
+        var close = window.confirm("需要关闭当前页面");
+        if(close==true){
+            document.getElementById("text_close").value="true close";
+            android.finish();
+        }else {
+            document.getElementById("text_close").value="false close";
+        }
+    }
+    
+    function sendPrompt() {
+        var b = prompt("please input your password","aaa");
+        alert("your input is "+b);
+        if (b.length>0){
+            android.setPrompt(b);
+        }
+
+    }
+    
+    
+</script>
+
+</html>

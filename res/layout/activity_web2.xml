@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tsbdemo.WebActivity" >
+
+    <com.tencent.smtt.sdk.WebView
+        android:id="@+id/tbsWebView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
+
+    <ProgressBar
+        android:id="@+id/web_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-7dp"
+        android:layout_marginTop="-7dp"
+        android:indeterminate="false" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tbsWebView"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/et_text"
+                android:text="activity text"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btn_sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="btn"
+                android:text="提交" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/et_num"
+                android:text="1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                 />
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="btn"
+                android:text="+" />
+
+            <Button
+                android:id="@+id/btn_reduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="btn"
+                android:text="-" />
+        </LinearLayout>
+        
+        <Button
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btn"
+            android:text="close" />
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btn"
+            android:text="send" />
+    </LinearLayout>
+
+</RelativeLayout>

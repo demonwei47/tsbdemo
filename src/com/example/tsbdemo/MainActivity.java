@@ -51,6 +51,10 @@ public class MainActivity extends Activity {
 			intent.putExtra("url", "http://220.180.239.166/Information/ActivityDetail?aid=123");
 			startActivity(intent);
 			break;
+		case R.id.btn8:
+			Intent intent=new Intent(MainActivity.this, Web2Activity.class);
+			startActivity(intent);
+			break;
 
 		default:
 			break;
